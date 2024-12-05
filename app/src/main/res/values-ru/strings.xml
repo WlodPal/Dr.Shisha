@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dr. Shisha</string>
+    <string name="explore_mixes">Популярные</string>
+    <string name="custom_mixes">Свои Миксы</string>
+    <string name="assistant">Ассистент</string>
+    <string name="more">Ещё</string>
+    <string name="shisha">Кальяны</string>
+    <string name="charcoal">Уголь</string>
+    <string name="heads">Чашы</string>
+    <string name="empty"></string>
+    <string name="accessories">Аксесуары</string>
+    <string name="brands_with_flavours">Бренды табаков и вкусами</string>
+    <string name="materials_and_types_of_hookah_bow">Материалы и виды чаш для кальяна: Какую чашу выбрать?</string>
+    <string name="the_materials_of_the_bowl">Вкус табака, а значит и удовольствие от кальяна напрямую зависит от правильного прогрева чашки и равномерного распределения жара. А на то как чаша будет прогреваться влияет ее тип, форма, материал изготовления и покрытие. Исходя из преследуемых целей, вам могут потребоваться те или иные свойства материалов чаши.</string>
+    <string name="strong_and_week_sides_clay_bow">Плюсы: \n - Низкая стоимость.\n - Высокая жаростойкость.\n Минусы: \n - Возможен перегрев.\n - Сложно чистить из-за впитывающего сиропа.</string>
+    <string name="strong_and_week_sides_ceramic">Advantages: \n - Не влияют на вкус. \n - Легко мыть. \n - Не остаётся запахов. \n Минусы: \n - Сложно контролировать жар. \n - Дороже глиняных.\n - Модели без нанесения глазури хрупкие.</string>
+    <string name="clay_desc">Глиняные чаши для кальяна — это нестареющая классика. Они достаточно жаростойкие и табак в них прогревается равномерно. Среди прочих материалов, они отличаются большей дешевизной, однако без использования колпака могут перегреваться и портить вкус табака. Впрочем, использование дополнительных аксессуаров нивелирует этот недостаток.</string>
+    <string name="ceramic_desc">В общем и целом, керамика — это глина прошедшая обжиг и покрытая глазурью. Дополнительный слой не даёт сиропу впитаться в стенки чаши для кальяна, что позволяет запахам от предыдущих забивок перестать вас преследовать и влиять на вкус нового табака. Это же помогает с большей легкостью мыть эти чаши. n\ n\Технология производства керамических кальянных чаш не покрытых глазурью обеспечивает их большей теплопроводностью, что приводит к меньшей жароустойчивости. Поэтому не стоит ставить их под холодную воду сразу после курения, во избежание появления трещин.</string>
+    <string name="clay_hookah_bowls">Глиняные чаши</string>
+    <string name="ceramic_bowls">Керамические чаши</string>
+    <string name="faience_bowls">Фаянсовые чаши</string>
+    <string name="silicone_bowls">Силиконовые чаши</string>
+    <string name="stone_bowls">Каменные чаши</string>
+    <string name="fruit_bowls">Фруктовые чаши</string>
+    <string name="content_icon_level">levelOfStrong</string>
+    <string name="dropdown_arrow_icon">arrow drop down</string>
+    <string name="search_action">search_action</string>
+    <string name="sort_mixes">sort mixes</string>
+    <string name="search">search</string>
+    <string name="close_search_button">close_search_button</string>
+    <string name="alcohol">Алкоголь</string>
+    <string name="lemonade">Лимонад</string>
+    <string name="ice">Лёд (Холодок)</string>
+    <string name="berries">Ягоды</string>
+    <string name="mint">Мята</string>
+    <string name="cocktail">Коктейль</string>
+    <string name="citrus">Цитрусы</string>
+    <string name="dessert">Десерт</string>
+    <string name="flowers">Цветы</string>
+    <string name="gum">Жвачка</string>
+    <string name="tropical_fruits">Тропические фрукты</string>
+    <string name="ice_cream">Мороженое</string>
+    <string name="spices">Специи</string>
+    <string name="nuts">Орехи</string>
+    <string name="fruits">Фрукты</string>
+    <string name="chocolate">Шоколад</string>
+    <string name="herbs">Травы</string>
+    <string name="bakery">Выпечка</string>
+    <string name="gastronomy">Гастрономия</string>
+    <string name="pine">Хвоя</string>
+    <string name="honey">Мёд</string>
+    <string name="energy_drink">Энергетик</string>
+    <string name="cheese">Сыр</string>
+    <string name="coffee">Кофе</string>
+
+</resources>
