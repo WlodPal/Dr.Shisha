@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
+
 package com.palchukwlod.drshisha.presentation.customMixes.listOfMixes
 
 import androidx.compose.foundation.background
@@ -7,6 +9,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -27,7 +30,9 @@ fun ListOfMixesScreenContent(
     searchTextState: String,
     navigationState: NavigationState,
     onShishaMixClicked: (CustomMix) -> Unit,
-) {
+
+    ) {
+
 
     Scaffold(
         modifier = Modifier
@@ -66,6 +71,7 @@ fun ListOfMixesScreenContent(
     }
 }
 
+
 @Composable
 fun DisplayShishaMixes(
     paddingValues: PaddingValues,
@@ -86,9 +92,9 @@ fun DisplayShishaMixes(
             CardItem(
                 modifier = Modifier,
                 customMix = customMix,
-                onShishaMixClicked = { onShishaMixClicked(customMix) },
-                onDelete = { listOfMixesViewModel.deleteCustomMix(customMix) },
-                onEdit = {} // TODO
+                onShishaMixClicked = {onShishaMixClicked(customMix)},
+                onDelete = {listOfMixesViewModel.deleteCustomMix(customMix)},
+                onEdit = {}
             )
 
         }
