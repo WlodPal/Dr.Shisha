@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3Api::class)
+
 package com.palchukwlod.drshisha.presentation.customMixes.listOfMixes
 
 import androidx.compose.foundation.Image
@@ -7,15 +9,22 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.CardElevation
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.SwipeToDismissBox
+import androidx.compose.material3.SwipeToDismissBoxState
+import androidx.compose.material3.SwipeToDismissBoxValue
 import androidx.compose.material3.Text
+import androidx.compose.material3.rememberSwipeToDismissBoxState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -24,7 +33,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.example.shishamixcompouse.presentation.ui.theme.DESCRIPTION_SIZE
 import com.example.shishamixcompouse.presentation.ui.theme.FLAVOUR_TYPE_SIZE
 import com.example.shishamixcompouse.presentation.ui.theme.LARGE
@@ -38,6 +46,31 @@ import com.palchukwlod.drshisha.data.entity.customMix.FlavorType
 import com.palchukwlod.drshisha.data.entity.customMix.LevelOfStrong
 import com.palchukwlod.drshisha.presentation.theme.DrShishaTheme
 import com.palchukwlod.drshisha.presentation.theme.fontFamily
+
+
+@Composable
+fun DismissBackground(
+    dismissBoxState: SwipeToDismissBoxState
+) {
+    val color = when(dismissBoxState.dismissDirection){
+        SwipeToDismissBoxValue.EndToStart -> Color.Red
+        SwipeToDismissBoxValue.StartToEnd -> Color.Green
+        SwipeToDismissBoxValue.Settled -> Color.Transparent
+    }
+
+    Row(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color)
+            .padding(LARGE),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        Icon(imageVector = Icons.Default.Edit, contentDescription = "Edit")
+        Spacer(modifier = Modifier)
+        Icon(imageVector = Icons.Default.Delete, contentDescription = "Delete")
+    }
+}
 
 
 @Composable
@@ -115,6 +148,44 @@ fun CustomMixCard(
         }
     }
 }
+
+@Composable
+fun CardItem(
+    modifier: Modifier,
+    customMix: CustomMix,
+    onShishaMixClicked: (CustomMix) -> Unit,
+    onDelete: (CustomMix) -> Unit,
+    onEdit: (CustomMix) -> Unit
+) {
+
+    val dismissState = rememberSwipeToDismissBoxState(
+        confirmValueChange = {
+            when (it) {
+                SwipeToDismissBoxValue.EndToStart -> {
+                    onDelete(customMix)
+                }
+                SwipeToDismissBoxValue.StartToEnd -> {
+                    onEdit(customMix)
+                }
+                SwipeToDismissBoxValue.Settled -> return@rememberSwipeToDismissBoxState false
+            }
+            return@rememberSwipeToDismissBoxState true
+        },
+        positionalThreshold = { it * .25f }
+    )
+    
+    SwipeToDismissBox(
+        state = dismissState,
+        modifier = modifier,
+        backgroundContent = { DismissBackground(dismissBoxState = dismissState) },
+        content = {
+            CustomMixCard(customMix = customMix, onShishaMixClicked = onShishaMixClicked)
+        })
+
+}
+
+
+
 
 @Composable
 @Preview
